@@ -1,0 +1,35 @@
+#!/bin/bash
+# Script 2: FOSS Package Inspector
+# Author: [Your Name] | Course: Open Source Software
+# Purpose: Checks if Python is installed and displays package info
+
+# --- Set package name ---
+PACKAGE="python3"
+
+# --- Check if package is installed ---
+if apk info $PACKAGE &>/dev/null; then
+    echo "$PACKAGE is installed on this system."
+    # Display version and license info
+    apk info $PACKAGE | grep -E 'description|webpage'
+else
+    echo "$PACKAGE is NOT installed."
+fi
+
+echo "--------------------------------"
+
+# --- Case statement: philosophy notes ---
+case $PACKAGE in
+    python3)
+        echo "Python: a language born from frustration, shared with the world" ;;
+    httpd)
+        echo "Apache: the web server that built the open internet" ;;
+    mysql)
+        echo "MySQL: open source at the heart of millions of apps" ;;
+    git)
+        echo "Git: the tool Linus built when proprietary systems failed him" ;;
+    *)
+        echo "An open source tool with a story worth knowing" ;;
+esac
+
+echo "--------------------------------"
+echo "License: PSF License — free to use, study, modify and share"
