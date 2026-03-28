@@ -1,0 +1,46 @@
+#!/bin/bash
+# Script 5: Open Source Manifesto Generator
+# Author: [Your Name] | Course: Open Source Software
+# Purpose: Generates a personal open source philosophy statement
+
+# --- alias concept demonstrated ---
+# alias pyrun='python3' would let us type pyrun instead of python3
+
+echo "================================"
+echo " Open Source Manifesto Generator"
+echo "================================"
+echo "Answer three questions below:"
+echo ""
+
+# --- Gather user input ---
+read -p "1. Name one open-source tool you use every day: " TOOL
+read -p "2. In one word, what does 'freedom' mean to you? " FREEDOM
+read -p "3. Name one thing you would build and share freely: " BUILD
+
+# --- Get current date and username ---
+DATE=$(date '+%d %B %Y')
+OUTPUT="manifesto_$(whoami).txt"
+
+# --- Compose and write manifesto to file ---
+echo "" > $OUTPUT
+echo "Open Source Manifesto" >> $OUTPUT
+echo "Generated on: $DATE" >> $OUTPUT
+echo "----------------------------" >> $OUTPUT
+echo "" >> $OUTPUT
+echo "I believe in the power of open source software." >> $OUTPUT
+echo "Every day, I use $TOOL — a tool built and shared freely by others." >> $OUTPUT
+echo "To me, freedom in software means $FREEDOM." >> $OUTPUT
+echo "One day, I hope to build $BUILD and share it with the world," >> $OUTPUT
+echo "so that others can learn from it, improve it, and build further." >> $OUTPUT
+echo "Just as Python was shared freely in 1991 and changed the world," >> $OUTPUT
+echo "I believe every contribution, no matter how small, matters." >> $OUTPUT
+echo "" >> $OUTPUT
+echo "Signed: $(whoami) | $DATE" >> $OUTPUT
+
+echo "--------------------------------"
+echo "Manifesto saved to $OUTPUT"
+echo "--------------------------------"
+
+# --- Display the manifesto ---
+cat $OUTPUT
+echo "================================"
